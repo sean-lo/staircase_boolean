@@ -231,7 +231,7 @@ def run_train_eval_loop(
 ):
     # Initialize run directory
     time_str = datetime.datetime.now().isoformat(timespec="seconds")
-    run_dir = f"trained_wts/{gen_fn_str}_{eval_fn_str}/{time_str}/"
+    run_dir = f"../trained_wts/{gen_fn_str}_{eval_fn_str}/{time_str}/"
     Path(run_dir).mkdir(parents=True, exist_ok=True)
     (Path(run_dir) / "readme.txt").write_text(
         f"""time:               {time_str}
