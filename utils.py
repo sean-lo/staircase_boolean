@@ -1,12 +1,4 @@
-import math
-import itertools
-import numpy as np
-import matplotlib.pyplot as plt
-import pickle
-
 import torch
-import torch.nn as nn
-import torch.optim as optim
 
 
 def get_staircase_fourier_fn(n: int):
@@ -20,37 +12,6 @@ def get_sparse_fourier_fn(n: int):
     fourier_fn = {}
     fourier_fn[tuple(range(n))] = 1
     return fourier_fn
-
-
-def truthtable(n: int, eval_fn):
-    return [eval_fn(x) for x in itertools.product([1, -1], repeat=n)]
-
-
-def is_stair_coeff(tup):
-    isOne = False
-    for j in tup:
-        if j == 1:
-            isOne = True
-        else:
-            if isOne:
-                return False
-    return True
-
-
-def plot_fourier_coeffs(stair_fourier_coeffs, title):
-    if stair_fourier_coeffs:
-        stair_fourier_coeffs = np.asarray(stair_fourier_coeffs).T
-        print(stair_fourier_coeffs.shape)
-        plt.figure()
-        for i in range(1, 20):
-            plt.plot(
-                range(stair_fourier_coeffs.shape[1]),
-                stair_fourier_coeffs[i, :],
-                label=str(i),
-            )
-        plt.legend()
-        plt.title(title)
-        plt.show()
 
 
 def eval_fourier_tuple(inputs, fourier_tuple):
