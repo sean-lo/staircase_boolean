@@ -1,16 +1,56 @@
 import torch
+import numpy as np
 
 
-def get_staircase_fourier_fn(n: int):
+def convert_fourier_fn_to_eval_fn(
+    fourier_fn: dict,
+):
+    def eval_fn(
+        x: torch.Tensor,
+    ):
+        return torch.FloatTensor(
+            [
+                sum(
+                    fourier_coeff * torch.prod(x[list(fourier_tuple)])
+                    for fourier_tuple, fourier_coeff in fourier_fn.items()
+                )
+            ]
+        )
+
+    return eval_fn
+
+
+def convert_fourier_fn_to_fourier_tuples(
+    fourier_fn: dict,
+    n: int,
+):
+    track_fourier_coeffs_tuples = [tuple(np.ones((n,)))]
+    for fourier_tuple in fourier_fn.keys():
+        curr_coeff = np.ones((n,))
+        curr_coeff[list(fourier_tuple)] = -1
+        track_fourier_coeffs_tuples.append(tuple(curr_coeff))
+    return track_fourier_coeffs_tuples
+
+
+def get_staircase_fourier_fn(d: int):
     fourier_fn = {}
-    for i in range(n):
+    for i in range(d):
         fourier_fn[tuple(range(i + 1))] = 1
     return fourier_fn
 
 
-def get_sparse_fourier_fn(n: int):
+def get_sparse_fourier_fn(d: int):
     fourier_fn = {}
-    fourier_fn[tuple(range(n))] = 1
+    fourier_fn[tuple(range(d))] = 1
+    return fourier_fn
+
+
+def get_multi_staircase_fourier_fn(d_1: int, d_2: int):
+    fourier_fn = {}
+    for i in range(d_1):
+        fourier_fn[tuple(range(i + 1))] = 1
+    for i in range(d_2 - 1):
+        fourier_fn[tuple([0] + list(range(d_1, d_1 + i + 1)))] = 1
     return fourier_fn
 
 

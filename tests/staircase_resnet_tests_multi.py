@@ -5,7 +5,9 @@ import numpy as np
 import random
 
 from neural_net_architectures import ReLUResNet
-from utils import get_multi_staircase_fourier_coeff_tuples
+from utils import (
+    get_multi_staircase_fourier_fn,
+)
 
 from datasets import (
     generate_boolean_unbiased,
@@ -53,19 +55,22 @@ def main(
     eval_batch_size: int,
     iter_range,
 ):
-    track_fourier_coeffs_tuples = get_multi_staircase_fourier_coeff_tuples(n, d_1, d_2)
-    for eval_fn, eval_fn_str in zip(
+    for eval_fn, eval_fn_str, eval_fourier_fn in zip(
         [
             functools.partial(eval_multi_stair_fast, d_1=d_1, d_2=d_2),
         ],
         [
             "stair_multi",
         ],
+        [
+            get_multi_staircase_fourier_fn(d_1, d_2),
+        ],
     ):
         run_train_eval_loop(
             n=n,
             gen_fn=generate_boolean_unbiased,
             gen_fn_str="unbiased",
+            eval_fourier_fn=eval_fourier_fn,
             eval_fn=eval_fn,
             eval_fn_str=eval_fn_str,
             erm=erm,
@@ -78,7 +83,6 @@ def main(
             learning_rate=learning_rate,
             learning_schedule=learning_schedule,
             refresh_save_rate=refresh_save_rate,
-            track_fourier_coeffs_tuples=track_fourier_coeffs_tuples,
             eval_batch_size=eval_batch_size,
             iter_range=iter_range,
         )
@@ -88,11 +92,6 @@ if __name__ == "__main__":
     torch.random.manual_seed(1234)
     np.random.seed(1234)
     random.seed(1234)
-    n = 30
-    d_1 = 7  # degree of staircase
-    d_2 = 7
-    num_layers = 5
-    layer_width = 50
     num_iter = 50000
     refresh_save_rate = 1000
     learning_rate = 0.004
@@ -103,6 +102,12 @@ if __name__ == "__main__":
     erm_num_samples = 100000
     net_type = ReLUResNet
     iter_range = range(0, num_iter, 1000)
+
+    n = 30
+    d_1 = 7  # degree of staircase
+    d_2 = 7
+    num_layers = 5
+    layer_width = 50
 
     main(
         n=n,

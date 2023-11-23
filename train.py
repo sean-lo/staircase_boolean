@@ -9,7 +9,11 @@ import datetime
 
 from neural_net_architectures import ReLUResNet
 
-from utils import eval_fourier_tuple
+from utils import (
+    eval_fourier_tuple,
+    convert_fourier_fn_to_eval_fn,
+    convert_fourier_fn_to_fourier_tuples,
+)
 
 from datasets import (
     BooleanDataset,
@@ -208,9 +212,9 @@ def run_train_eval_loop(
     n: int,
     # dataset params
     gen_fn,
-    gen_fn_str,
-    eval_fn,
-    eval_fn_str,
+    gen_fn_str: str,
+    eval_fourier_fn: dict,
+    eval_fn_str: str,
     erm: bool,
     erm_num_samples: int,
     # architecture params
@@ -223,12 +227,20 @@ def run_train_eval_loop(
     learning_rate: float,
     learning_schedule,
     refresh_save_rate: int,
-    track_fourier_coeffs_tuples,
     # eval params
     eval_batch_size: int,
     iter_range,
     criterion=nn.MSELoss(),
+    # optional: eval_fn
+    eval_fn=None,
 ):
+    if eval_fn is None:
+        eval_fn = convert_fourier_fn_to_eval_fn(eval_fourier_fn)
+    track_fourier_coeffs_tuples = convert_fourier_fn_to_fourier_tuples(
+        eval_fourier_fn,
+        n,
+    )
+
     # Initialize run directory
     time_str = datetime.datetime.now().isoformat(timespec="seconds")
     run_dir = f"../trained_wts/{gen_fn_str}_{eval_fn_str}/{time_str}/"
@@ -251,6 +263,7 @@ erm:                {erm}
 erm_num_samples:    {erm_num_samples}
         """
     )
+    pickle.dump(eval_fourier_fn, open(Path(run_dir) / "fourier_fn.pkl", "wb"))
     pop_dataloader, dataloader = generate_dataloaders(
         n=n,
         gen_fn=gen_fn,

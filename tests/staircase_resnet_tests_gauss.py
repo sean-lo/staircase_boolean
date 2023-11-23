@@ -5,7 +5,10 @@ import numpy as np
 import random
 
 from neural_net_architectures import ReLUResNet
-from utils import get_staircase_fourier_coeff_tuples
+from utils import (
+    get_staircase_fourier_fn,
+    get_sparse_fourier_fn,
+)
 
 from datasets import (
     generate_gaussian,
@@ -53,8 +56,7 @@ def main(
     eval_batch_size: int,
     iter_range,
 ):
-    track_fourier_coeffs_tuples = get_staircase_fourier_coeff_tuples(n, d)
-    for eval_fn, eval_fn_str in zip(
+    for eval_fn, eval_fn_str, eval_fourier_fn in zip(
         [
             functools.partial(eval_staircase_fast, d=d),
             functools.partial(eval_parity_fast, d=d),
@@ -63,11 +65,16 @@ def main(
             "stair",
             "parity",
         ],
+        [
+            get_staircase_fourier_fn(d),
+            get_sparse_fourier_fn(d),
+        ],
     ):
         run_train_eval_loop(
             n=n,
             gen_fn=generate_gaussian,
             gen_fn_str="gaussian",
+            eval_fourier_fn=eval_fourier_fn,
             eval_fn=eval_fn,
             eval_fn_str=eval_fn_str,
             erm=erm,
@@ -80,7 +87,6 @@ def main(
             learning_rate=learning_rate,
             learning_schedule=learning_schedule,
             refresh_save_rate=refresh_save_rate,
-            track_fourier_coeffs_tuples=track_fourier_coeffs_tuples,
             eval_batch_size=eval_batch_size,
             iter_range=iter_range,
         )
@@ -90,10 +96,6 @@ if __name__ == "__main__":
     torch.random.manual_seed(1234)
     np.random.seed(1234)
     random.seed(1234)
-    n = 100
-    d = 5
-    num_layers = 8
-    layer_width = 50
     num_iter = 100000
     refresh_save_rate = 1000
     learning_rate = 0.01
@@ -104,6 +106,11 @@ if __name__ == "__main__":
     erm_num_samples = 300000
     net_type = ReLUResNet
     iter_range = range(0, num_iter, 1000)
+
+    n = 100
+    d = 5
+    num_layers = 8
+    layer_width = 50
 
     main(
         n=n,

@@ -5,7 +5,10 @@ import numpy as np
 import random
 
 from neural_net_architectures import ReLUResNet
-from utils import get_staircase_fourier_coeff_tuples
+from utils import (
+    get_staircase_fourier_fn,
+    get_sparse_fourier_fn,
+)
 
 from datasets import (
     generate_boolean_biased,
@@ -54,8 +57,7 @@ def main(
     eval_batch_size: int,
     iter_range,
 ):
-    track_fourier_coeffs_tuples = get_staircase_fourier_coeff_tuples(n, d)
-    for eval_fn, eval_fn_str in zip(
+    for eval_fn, eval_fn_str, eval_fourier_fn in zip(
         [
             functools.partial(eval_staircase_fast, d=d),
             functools.partial(eval_parity_fast, d=d),
@@ -64,11 +66,16 @@ def main(
             "stair",
             "parity",
         ],
+        [
+            get_staircase_fourier_fn(d),
+            get_sparse_fourier_fn(d),
+        ],
     ):
         run_train_eval_loop(
             n=n,
-            gen_fn=generate_boolean_biased,
+            gen_fn=functools.partial(generate_boolean_biased, p=p),
             gen_fn_str="biased",
+            eval_fourier_fn=eval_fourier_fn,
             eval_fn=eval_fn,
             eval_fn_str=eval_fn_str,
             erm=erm,
@@ -81,7 +88,6 @@ def main(
             learning_rate=learning_rate,
             learning_schedule=learning_schedule,
             refresh_save_rate=refresh_save_rate,
-            track_fourier_coeffs_tuples=track_fourier_coeffs_tuples,
             eval_batch_size=eval_batch_size,
             iter_range=iter_range,
         )
@@ -91,11 +97,6 @@ if __name__ == "__main__":
     torch.random.manual_seed(1234)
     np.random.seed(1234)
     random.seed(1234)
-    n = 30
-    p = 0.75
-    d = 7
-    num_layers = 5
-    layer_width = 40
     num_iter = 100000
     refresh_save_rate = 1000
     learning_rate = 0.01
@@ -107,20 +108,26 @@ if __name__ == "__main__":
     net_type = ReLUResNet
     iter_range = range(0, num_iter, 1000)
 
+    n = 30
+    p = 0.75
+    d = 7
+    num_layers = 5
+    layer_width = 40
+
     main(
         n=n,
         p=p,
         d=d,
-        num_layers=num_layers,
-        layer_width=layer_width,
-        num_iter=num_iter,
-        refresh_save_rate=refresh_save_rate,
-        learning_rate=learning_rate,
-        learning_schedule=learning_schedule,
-        train_batch_size=train_batch_size,
-        eval_batch_size=eval_batch_size,
         erm=erm,
         erm_num_samples=erm_num_samples,
+        num_layers=num_layers,
+        layer_width=layer_width,
         net_type=net_type,
+        train_batch_size=train_batch_size,
+        num_iter=num_iter,
+        learning_rate=learning_rate,
+        learning_schedule=learning_schedule,
+        refresh_save_rate=refresh_save_rate,
+        eval_batch_size=eval_batch_size,
         iter_range=iter_range,
     )
