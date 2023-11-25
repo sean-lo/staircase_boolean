@@ -54,8 +54,17 @@ def get_multi_staircase_fourier_fn(d_1: int, d_2: int):
     return fourier_fn
 
 
-def eval_fourier_tuple(inputs, fourier_tuple):
-    # print(inputs,fourier_tuple)
+def eval_fourier_tuple(
+    inputs: torch.Tensor,
+    fourier_tuple: tuple,
+):
+    """
+    inputs: tensor of size (batch_size, n)
+    fourier_tuple: tuple of length n, with entries in {-1, 1}
+
+    returns labels, tensor of size (batch_size,)
+        each entry is the monomial evaluated at that input
+    """
     labels = torch.ones(len(inputs[:, 1]))
     for j, v in enumerate(fourier_tuple):
         if v == -1:

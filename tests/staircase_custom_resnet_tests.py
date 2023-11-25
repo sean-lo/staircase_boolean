@@ -49,7 +49,7 @@ if __name__ == "__main__":
     iter_range = range(0, num_iter, 1000)
 
     n = 4
-    num_layers = 3
+    num_layers = 1
     layer_width = 4
 
     fourier_fn = {

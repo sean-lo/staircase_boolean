@@ -184,7 +184,10 @@ def output_losses_and_fourier_coeffs(
                 for fourier_ind, fourier_tuple in enumerate(
                     track_fourier_coeffs_tuples
                 ):
+                    # fourier_tuple_labels is a tensor of size (batch_size,)
+                    # each entry is the monomial (prescribed by fourier_tuple) evaluated at that input
                     fourier_tuple_labels = eval_fourier_tuple(inputs, fourier_tuple)
+                    # fourier_tuple_val
                     fourier_tuple_val = torch.mean(outputs * fourier_tuple_labels)
                     running_coeffs[-1].append(fourier_tuple_val)
 
