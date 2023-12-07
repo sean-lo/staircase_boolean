@@ -3,12 +3,12 @@ import torch
 import numpy as np
 import random
 
-from neural_net_architectures import ReLUResNet
+from staircase.neural_net_architectures import ReLUResNet
 
-from datasets import (
+from staircase.datasets import (
     generate_boolean_unbiased,
 )
-from train import run_train_eval_loop
+from staircase.train import run_train_eval_loop
 
 
 def lr_sched(
@@ -37,14 +37,13 @@ if __name__ == "__main__":
     torch.random.manual_seed(1234)
     np.random.seed(1234)
     random.seed(1234)
-    num_iter = 10000
-    refresh_save_rate = 1000
     learning_rate = 0.01
     learning_schedule = lr_sched
     train_batch_size = 20
     eval_batch_size = 30000
     erm = True
     erm_num_samples = 60000
+    num_iter = erm_num_samples
     net_type = ReLUResNet
     iter_range = range(0, num_iter, 1000)
 
@@ -74,7 +73,6 @@ if __name__ == "__main__":
         num_iter=num_iter,
         learning_rate=learning_rate,
         learning_schedule=learning_schedule,
-        refresh_save_rate=refresh_save_rate,
-        eval_batch_size=eval_batch_size,
-        iter_range=iter_range,
+        # eval_batch_size=eval_batch_size,
+        # iter_range=iter_range,
     )

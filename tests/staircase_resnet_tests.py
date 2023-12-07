@@ -4,18 +4,18 @@ import functools
 import numpy as np
 import random
 
-from neural_net_architectures import ReLUResNet
-from utils import (
+from staircase.neural_net_architectures import ReLUResNet
+from staircase.utils import (
     get_staircase_fourier_fn,
-    get_sparse_fourier_fn,
+    get_parity_fourier_fn,
 )
 
-from datasets import (
+from staircase.datasets import (
     generate_boolean_unbiased,
     eval_parity_fast,
     eval_staircase_fast,
 )
-from train import run_train_eval_loop
+from staircase.train import run_train_eval_loop
 
 
 def lr_sched(
@@ -67,7 +67,7 @@ def main(
         ],
         [
             get_staircase_fourier_fn(d),
-            get_sparse_fourier_fn(d),
+            get_parity_fourier_fn(d),
         ],
     ):
         run_train_eval_loop(

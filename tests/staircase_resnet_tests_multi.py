@@ -4,16 +4,16 @@ import functools
 import numpy as np
 import random
 
-from neural_net_architectures import ReLUResNet
-from utils import (
+from staircase.neural_net_architectures import ReLUResNet
+from staircase.utils import (
     get_multi_staircase_fourier_fn,
 )
 
-from datasets import (
+from staircase.datasets import (
     generate_boolean_unbiased,
     eval_multi_stair_fast,
 )
-from train import run_train_eval_loop
+from staircase.train import run_train_eval_loop
 
 
 def lr_sched_multi(
