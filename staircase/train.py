@@ -7,15 +7,15 @@ import pickle
 from pathlib import Path
 import datetime
 
-from neural_net_architectures import ReLUResNet
+from staircase.neural_net_architectures import ReLUResNet
 
-from utils import (
+from staircase.utils import (
     eval_fourier_tuple,
     convert_fourier_fn_to_eval_fn,
     convert_fourier_fn_to_fourier_tuples,
 )
 
-from datasets import (
+from staircase.datasets import (
     BooleanDataset,
     ERMBooleanDataset,
 )
@@ -67,13 +67,14 @@ def train_net_and_save_params(
     learning_rate: float,
     learning_schedule,
     erm: bool,
-    refresh_save_rate: int,
+    erm_num_samples: int,
     run_dir: str | Path,
+    save_model: bool = True,
 ):
     sgd_noise = 0
     print("Train_function started")
     net_dir = Path(run_dir) / "net"
-    net_dir.mkdir(exist_ok=True)
+    if save_model: net_dir.mkdir(exist_ok=True)
 
     dataloader_iter = iter(dataloader)
     if erm:
@@ -81,8 +82,8 @@ def train_net_and_save_params(
 
     running_losses = []
     running_loss = 0.0
-    if erm:
-        run_pop_loss = 0.0
+    running_pop_losses = []
+    running_pop_loss = 0.0
     print("Starting training")
     for iter_num in range(num_iter):  # loop over the dataset multiple times
         trainable_params = filter(lambda p: p.requires_grad, net.parameters())
@@ -114,7 +115,7 @@ def train_net_and_save_params(
                 pop_labels = pop_labels.to(device)
                 pop_labels = pop_labels[:, 0]
                 pop_loss = criterion(net(pop_inputs), pop_labels)
-                run_pop_loss += pop_loss
+                running_pop_loss += pop_loss
 
         if iter_num % 100 == 0 and sgd_noise > 0:
             perturb_params = filter(lambda p: p.requires_grad, net.parameters())
@@ -126,25 +127,26 @@ def train_net_and_save_params(
 
         # print statistics
         running_loss += loss.item()
-        if iter_num % 100 == 99:  # print every 1000 mini-batches
+        if iter_num % erm_num_samples == erm_num_samples - 1:  # print every 1000 mini-batches
             if erm:
                 print(
-                    f"{iter_num:>6d}: Running train loss {running_loss / 100:.6f}, Population loss {run_pop_loss / 100:.6f}"
+                    f"{iter_num:>6d}: Running train loss {running_loss / erm_num_samples:.6f}, Population loss {running_pop_loss / erm_num_samples:.6f}"
                 )
                 running_losses.append(running_loss)
                 running_loss = 0.0
-                run_pop_loss = 0.0
+                running_pop_losses.append(running_loss)
+                running_pop_loss = 0.0
             else:
-                print(f"{iter_num:>6d}: Running train loss {running_loss / 100:.6f}")
+                print(f"{iter_num:>6d}: Running train loss {running_loss / erm_num_samples:.6f}")
                 running_losses.append(running_loss)
                 running_loss = 0.0
 
-        if iter_num % refresh_save_rate == 0:
+        if save_model and iter_num % erm_num_samples == 0:
             net_path = net_dir / f"{iter_num}.pkl"
             pickle.dump(net, open(net_path, "wb"))
             print(f"{iter_num:>6d}: Saved network parameters.")
 
-    return running_losses
+    return running_losses, running_pop_losses
 
 
 def output_losses_and_fourier_coeffs(
@@ -227,15 +229,17 @@ def run_train_eval_loop(
     # training params
     train_batch_size: int,
     num_iter: int,
+    # num_epochs: int,
     learning_rate: float,
     learning_schedule,
-    refresh_save_rate: int,
     # eval params
-    eval_batch_size: int,
-    iter_range,
+    # eval_batch_size: int,
+    # iter_range,
     criterion=nn.MSELoss(),
     # optional: eval_fn
     eval_fn=None,
+    write_log: bool = True,
+    save_model: bool = True,
 ):
     if eval_fn is None:
         eval_fn = convert_fourier_fn_to_eval_fn(eval_fourier_fn)
@@ -247,26 +251,25 @@ def run_train_eval_loop(
     # Initialize run directory
     time_str = datetime.datetime.now().isoformat(timespec="seconds")
     run_dir = f"../trained_wts/{gen_fn_str}_{eval_fn_str}/{time_str}/"
-    Path(run_dir).mkdir(parents=True, exist_ok=True)
-    (Path(run_dir) / "readme.txt").write_text(
-        f"""time:               {time_str}
-gen_fn:             {gen_fn_str}
-eval_fn:            {eval_fn_str}
-n:                  {n}
-num_layers:         {num_layers}
-layer_width:        {layer_width}
-net_type:           {net_type.__name__}
-train_batch_size:   {train_batch_size}
-num_iter:           {num_iter}
-learning_rate:      {learning_rate}
-refresh_save_rate:  {refresh_save_rate}
-iter_range:         {iter_range}
-eval_batch_size:    {eval_batch_size}
-erm:                {erm}
-erm_num_samples:    {erm_num_samples}
-        """
-    )
-    pickle.dump(eval_fourier_fn, open(Path(run_dir) / "fourier_fn.pkl", "wb"))
+    if write_log:
+        Path(run_dir).mkdir(parents=True, exist_ok=True)
+        (Path(run_dir) / "readme.txt").write_text(
+            f"""time:               {time_str}
+    gen_fn:             {gen_fn_str}
+    eval_fn:            {eval_fn_str}
+    n:                  {n}
+    num_layers:         {num_layers}
+    layer_width:        {layer_width}
+    net_type:           {net_type.__name__}
+    train_batch_size:   {train_batch_size}
+    num_iter:           {num_iter}
+    learning_rate:      {learning_rate}
+    erm:                {erm}
+    erm_num_samples:    {erm_num_samples}
+            """
+        )
+        pickle.dump(eval_fourier_fn, open(Path(run_dir) / "fourier_fn.pkl", "wb"))
+
     pop_dataloader, dataloader = generate_dataloaders(
         n=n,
         gen_fn=gen_fn,
@@ -281,33 +284,34 @@ erm_num_samples:    {erm_num_samples}
         layer_width=layer_width,
         net_type=net_type,
     )
-    train_net_and_save_params(
+    running_losses, running_pop_losses = train_net_and_save_params(
         dataloader=dataloader,
         pop_dataloader=pop_dataloader,
         criterion=criterion,
         net=net,
         device=device,
         num_iter=num_iter,
+        erm_num_samples=erm_num_samples,
         learning_rate=learning_rate,
         learning_schedule=learning_schedule,
         erm=erm,
-        refresh_save_rate=refresh_save_rate,
         run_dir=run_dir,
+        save_model=save_model,
     )
-    _, eval_dataloader = generate_dataloaders(
-        n=n,
-        gen_fn=gen_fn,
-        eval_fn=eval_fn,
-        erm=False,
-        erm_num_samples=erm_num_samples,
-        batch_size=eval_batch_size,
-    )
-    losses, fourier_coeffs = output_losses_and_fourier_coeffs(
-        device=device,
-        dataloader=eval_dataloader,
-        iter_range=iter_range,
-        criterion=criterion,
-        track_fourier_coeffs_tuples=track_fourier_coeffs_tuples,
-        run_dir=run_dir,
-    )
-    return
+    # _, eval_dataloader = generate_dataloaders(
+    #     n=n,
+    #     gen_fn=gen_fn,
+    #     eval_fn=eval_fn,
+    #     erm=False,
+    #     erm_num_samples=erm_num_samples,
+    #     batch_size=eval_batch_size,
+    # )
+    # losses, fourier_coeffs = output_losses_and_fourier_coeffs(
+    #     device=device,
+    #     dataloader=eval_dataloader,
+    #     iter_range=iter_range,
+    #     criterion=criterion,
+    #     track_fourier_coeffs_tuples=track_fourier_coeffs_tuples,
+    #     run_dir=run_dir,
+    # )
+    return running_losses, running_pop_losses
