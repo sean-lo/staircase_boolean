@@ -1,0 +1,19 @@
+Index: tests/staircase_resnet_tests.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import torch\n\nimport functools\nimport numpy as np\nimport random\n\nfrom neural_net_architectures import ReLUResNet\nfrom utils import get_staircase_fourier_coeff_tuples\n\nfrom datasets import (\n    generate_boolean_unbiased,\n    eval_parity_fast,\n    eval_staircase_fast,\n)\nfrom train import run_train_eval_loop\n\n\ndef lr_sched(\n    learning_rate: float,\n    iter_num: int,\n):\n    lr_decay = 15000  # learning rate decay parameter\n    if iter_num < lr_decay:\n        return learning_rate\n    if iter_num < 2 * lr_decay:\n        return learning_rate / 2\n    if iter_num < 3 * lr_decay:\n        return learning_rate / 4\n    if iter_num < 4 * lr_decay:\n        return learning_rate / 8\n    if iter_num < 5 * lr_decay:\n        return learning_rate / 16\n    if iter_num < 6 * lr_decay:\n        return learning_rate / 32\n    else:\n        return learning_rate / 64\n    # return learning_rate*math.exp(-iter_num/lr_decay)\n\n\ndef main(\n    n: int,\n    d: int,\n    erm: bool,\n    erm_num_samples: int,\n    num_layers: int,\n    layer_width: int,\n    net_type,\n    train_batch_size: int,\n    num_iter: int,\n    learning_rate: float,\n    learning_schedule,\n    refresh_save_rate: int,\n    eval_batch_size: int,\n    iter_range,\n):\n    track_fourier_coeffs_tuples = get_staircase_fourier_coeff_tuples(n, d)\n    for eval_fn, eval_fn_str in zip(\n        [\n            functools.partial(eval_staircase_fast, d=d),\n            functools.partial(eval_parity_fast, d=d),\n        ],\n        [\n            \"stair\",\n            \"parity\",\n        ],\n    ):\n        run_train_eval_loop(\n            n=n,\n            gen_fn=generate_boolean_unbiased,\n            gen_fn_str=\"unbiased\",\n            eval_fn=eval_fn,\n            eval_fn_str=eval_fn_str,\n            erm=erm,\n            erm_num_samples=erm_num_samples,\n            num_layers=num_layers,\n            layer_width=layer_width,\n            net_type=net_type,\n            train_batch_size=train_batch_size,\n            num_iter=num_iter,\n            learning_rate=learning_rate,\n            learning_schedule=learning_schedule,\n            refresh_save_rate=refresh_save_rate,\n            track_fourier_coeffs_tuples=track_fourier_coeffs_tuples,\n            eval_batch_size=eval_batch_size,\n            iter_range=iter_range,\n        )\n\n\nif __name__ == \"__main__\":\n    torch.random.manual_seed(1234)\n    np.random.seed(1234)\n    random.seed(1234)\n    n = 30\n    d = 10\n    num_layers = 5\n    layer_width = 40\n    num_iter = 10000\n    refresh_save_rate = 1000\n    learning_rate = 0.01\n    learning_schedule = lr_sched\n    train_batch_size = 20\n    eval_batch_size = 30000\n    erm = True\n    erm_num_samples = 60000\n    net_type = ReLUResNet\n    iter_range = range(0, num_iter, 1000)\n\n    main(\n        n=n,\n        d=d,\n        erm=erm,\n        erm_num_samples=erm_num_samples,\n        num_layers=num_layers,\n        layer_width=layer_width,\n        net_type=net_type,\n        train_batch_size=train_batch_size,\n        num_iter=num_iter,\n        learning_rate=learning_rate,\n        learning_schedule=learning_schedule,\n        refresh_save_rate=refresh_save_rate,\n        eval_batch_size=eval_batch_size,\n        iter_range=iter_range,\n    )\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tests/staircase_resnet_tests.py b/tests/staircase_resnet_tests.py
+--- a/tests/staircase_resnet_tests.py	
++++ b/tests/staircase_resnet_tests.py	
+@@ -94,7 +94,7 @@
+     d = 10
+     num_layers = 5
+     layer_width = 40
+-    num_iter = 10000
++    num_iter = 100000
+     refresh_save_rate = 1000
+     learning_rate = 0.01
+     learning_schedule = lr_sched

@@ -1,0 +1,8 @@
+,function_type,degree,depth,width,num_variables,num_samples,num_training_epochs
+0,parity,8,two,half_d,32,1000d,100
+1,staircase,8,two,half_d,32,1000d,100
+2,complete,8,two,half_d,32,1000d,100
+3,clipped_complete,8,two,half_d,32,1000d,100
+4,msp,8,two,half_d,32,1000d,100
+5,half_msp,8,two,half_d,32,1000d,100
+6,random,8,two,half_d,32,1000d,100
