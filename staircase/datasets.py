@@ -30,6 +30,46 @@ def eval_staircase_fast(x: torch.Tensor, d: int):
     )
 
 
+def eval_complete_staircase_fast(x: torch.Tensor, d: int):
+    return torch.FloatTensor([
+        torch.prod(torch.add(x[0:d], torch.ones(d)))
+        - 1
+    ])
+
+
+def eval_complete_clipped_staircase_fast(x: torch.Tensor, d: int):
+    return torch.FloatTensor([
+        torch.prod(torch.add(x[0:d], torch.ones(d)))
+        - 1
+        - torch.prod(x[0:d])
+    ])
+
+
+def eval_msp_example_fast(x: torch.Tensor, d: int):
+    return torch.FloatTensor([
+        torch.sum(x[0:d])
+        + torch.prod(x[0:d])
+    ])
+
+def eval_half_msp_example_fast(x: torch.Tensor, d: int):
+    return torch.FloatTensor([
+        torch.sum(x[0:d])
+        + sum(
+            torch.prod(x[i: i + d // 2])
+            for i in range(d // 2 + 1)
+        )
+        + torch.prod(x[0:d])
+    ])
+
+
+def eval_clipped_staircase_fast(x: torch.Tensor, d: int):
+    return torch.FloatTensor([
+        torch.prod(torch.add(x[0:d], torch.ones(d)))
+        - 1
+        - torch.prod(x[0:d])
+    ])
+
+
 def eval_multi_stair_fast(x: torch.Tensor, d_1: int, d_2: int):
     return (
         eval_staircase_fast(x, d_1)
@@ -75,6 +115,9 @@ class BooleanDataset(IterableDataset):
 
 
 class ERMBooleanDataset(IterableDataset):
+    """
+    Generates a population of size `erm_num_samples` to cycle through.
+    """
     def __init__(
         self,
         n: int,
