@@ -147,14 +147,17 @@ def run_instance(
     )
     # write losses to file
     if save_losses:
-        np.array(running_losses).tofile(Path(f"losses/train_loss_{row_index}.npy"))
-        np.array(running_pop_losses).tofile(Path(f"losses/val_losses_{row_index}.npy"))
+        np.save(Path(f"losses/train_loss_{row_index}.npy"), np.array(running_losses))
+        np.save(Path(f"losses/val_losses_{row_index}.npy"), np.array(running_pop_losses))
     # write record to file
     if save_records:
         records = {
+            "row_index": [row_index],
             "function_type": [function_type],
             "degree": [degree],
+            "depth": [depth], # string
             "num_layers": [num_layers],
+            "width": [width], # string
             "layer_width": [layer_width],
             "num_variables": [num_variables],
             "erm_num_samples": [erm_num_samples],

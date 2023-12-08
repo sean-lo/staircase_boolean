@@ -1,2 +1,0 @@
-,function_type,degree,num_layers,layer_width,num_variables,erm_num_samples,num_training_epochs,num_iter,net_type,train_batch_size,learning_rate,train_loss_initial,val_loss_initial,train_loss_final,val_loss_final
-0,half_msp,16,16,64,32,16000,100,1600000,ReLUResNet,20,0.01,,0.0,,0.0

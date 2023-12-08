@@ -4,34 +4,953 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42ff44ca-a946-4dce-a1e6-b9ee9933941f" name="Changes" comment="figuring out fourier_tuple_val">
-      <change afterPath="$PROJECT_DIR$/experiments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/combined (12).csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/experiment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/fourier_fns.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/job.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/losses.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/make_csv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/experiments/records.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staircase/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staircase/test_fourier_fn.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/datasets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_net_architectures.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/neural_net_architectures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/output.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_experiment_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/read_experiment_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_experiment_data_biased.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/read_experiment_data_biased.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_experiment_data_gauss.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/read_experiment_data_gauss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/read_experiment_data_multi.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/read_experiment_data_multi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/readme.rtf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/staircase_custom_resnet_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/staircase_custom_resnet_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/staircase_resnet_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/staircase_resnet_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/staircase_resnet_tests_biased.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/staircase_resnet_tests_biased.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/staircase_resnet_tests_gauss.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/staircase_resnet_tests_gauss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/staircase_resnet_tests_multi.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/staircase_resnet_tests_multi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/utils.py" afterDir="false" />
+    <list default="true" id="42ff44ca-a946-4dce-a1e6-b9ee9933941f" name="Changes" comment="get experiment results">
+      <change afterPath="$PROJECT_DIR$/experiments/postprocessing.py.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/combined.csv" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/combined.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/experiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns.zip" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/fourier_fns.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/0.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/1.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/10.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/100.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/101.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/102.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/103.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/104.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/105.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/106.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/107.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/108.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/109.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/11.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/110.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/111.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/112.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/113.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/114.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/115.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/116.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/117.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/118.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/119.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/12.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/120.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/121.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/122.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/123.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/124.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/125.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/126.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/127.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/128.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/129.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/13.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/130.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/131.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/132.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/133.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/134.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/135.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/136.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/137.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/138.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/139.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/14.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/140.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/141.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/142.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/143.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/144.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/145.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/146.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/147.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/148.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/149.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/15.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/150.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/151.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/152.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/153.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/154.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/155.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/156.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/157.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/158.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/159.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/16.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/160.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/161.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/162.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/163.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/164.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/165.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/166.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/167.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/168.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/169.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/17.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/170.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/171.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/172.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/173.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/174.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/175.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/176.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/177.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/178.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/179.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/18.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/180.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/181.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/182.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/183.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/184.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/185.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/186.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/187.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/188.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/189.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/19.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/190.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/191.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/192.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/193.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/194.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/195.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/196.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/197.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/198.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/199.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/2.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/20.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/200.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/201.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/202.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/203.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/204.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/205.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/206.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/207.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/208.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/209.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/21.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/210.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/211.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/212.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/213.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/214.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/215.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/216.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/217.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/218.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/219.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/22.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/220.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/221.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/222.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/223.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/224.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/225.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/226.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/227.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/228.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/229.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/23.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/230.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/231.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/232.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/233.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/234.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/235.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/236.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/237.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/238.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/239.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/24.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/240.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/241.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/242.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/243.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/244.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/245.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/246.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/247.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/248.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/249.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/25.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/250.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/251.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/26.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/27.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/28.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/29.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/3.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/30.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/31.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/32.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/33.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/34.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/35.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/36.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/37.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/38.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/39.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/4.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/40.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/41.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/42.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/43.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/44.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/45.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/46.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/47.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/48.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/49.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/5.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/50.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/51.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/52.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/53.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/54.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/55.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/56.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/57.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/58.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/59.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/6.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/60.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/61.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/62.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/63.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/64.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/65.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/66.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/67.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/68.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/69.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/7.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/70.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/71.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/72.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/73.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/74.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/75.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/76.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/77.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/78.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/79.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/8.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/80.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/81.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/82.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/83.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/84.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/85.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/86.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/87.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/88.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/89.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/9.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/90.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/91.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/92.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/93.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/94.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/95.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/96.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/97.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/98.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/fourier_fns/99.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses.zip" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/losses.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_0.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_1.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_10.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_100.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_101.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_102.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_103.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_104.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_105.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_106.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_107.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_108.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_109.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_11.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_110.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_111.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_112.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_113.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_114.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_115.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_116.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_117.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_118.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_119.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_12.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_120.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_121.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_122.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_123.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_124.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_125.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_126.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_127.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_128.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_129.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_13.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_130.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_131.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_132.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_133.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_134.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_135.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_136.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_137.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_138.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_139.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_14.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_140.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_141.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_142.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_143.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_144.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_145.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_146.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_147.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_148.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_149.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_15.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_150.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_151.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_152.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_153.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_154.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_155.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_156.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_157.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_158.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_159.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_16.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_160.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_161.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_162.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_163.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_164.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_165.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_166.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_167.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_168.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_169.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_17.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_170.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_171.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_172.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_173.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_174.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_175.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_176.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_177.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_178.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_179.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_18.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_180.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_181.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_182.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_183.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_184.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_185.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_186.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_187.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_188.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_189.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_19.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_190.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_191.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_192.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_193.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_194.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_195.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_196.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_197.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_198.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_199.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_2.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_20.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_200.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_201.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_202.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_203.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_204.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_205.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_206.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_207.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_208.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_209.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_21.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_210.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_211.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_212.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_213.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_214.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_215.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_216.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_217.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_218.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_219.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_22.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_220.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_221.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_222.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_223.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_224.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_225.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_226.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_227.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_23.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_24.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_25.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_26.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_27.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_28.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_29.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_3.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_30.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_31.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_32.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_33.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_34.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_35.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_36.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_37.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_38.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_39.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_4.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_40.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_41.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_42.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_43.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_44.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_45.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_46.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_47.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_48.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_49.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_5.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_50.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_51.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_52.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_53.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_54.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_55.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_56.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_57.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_58.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_59.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_6.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_60.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_61.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_62.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_63.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_64.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_65.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_66.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_67.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_68.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_69.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_7.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_70.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_71.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_72.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_73.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_74.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_75.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_76.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_77.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_78.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_79.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_8.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_80.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_81.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_82.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_83.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_84.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_85.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_86.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_87.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_88.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_89.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_9.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_90.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_91.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_92.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_93.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_94.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_95.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_96.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_97.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_98.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/train_loss_99.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_0.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_1.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_10.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_100.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_101.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_102.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_103.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_104.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_105.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_106.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_107.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_108.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_109.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_11.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_110.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_111.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_112.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_113.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_114.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_115.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_116.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_117.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_118.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_119.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_12.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_120.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_121.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_122.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_123.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_124.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_125.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_126.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_127.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_128.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_129.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_13.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_130.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_131.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_132.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_133.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_134.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_135.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_136.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_137.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_138.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_139.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_14.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_140.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_141.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_142.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_143.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_144.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_145.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_146.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_147.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_148.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_149.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_15.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_150.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_151.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_152.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_153.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_154.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_155.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_156.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_157.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_158.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_159.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_16.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_160.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_161.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_162.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_163.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_164.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_165.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_166.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_167.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_168.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_169.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_17.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_170.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_171.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_172.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_173.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_174.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_175.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_176.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_177.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_178.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_179.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_18.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_180.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_181.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_182.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_183.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_184.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_185.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_186.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_187.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_188.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_189.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_19.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_190.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_191.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_192.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_193.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_194.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_195.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_196.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_197.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_198.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_199.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_2.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_20.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_200.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_201.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_202.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_203.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_204.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_205.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_206.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_207.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_208.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_209.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_21.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_210.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_211.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_212.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_213.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_214.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_215.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_216.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_217.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_218.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_219.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_22.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_220.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_221.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_222.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_223.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_224.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_225.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_226.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_227.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_23.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_24.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_25.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_26.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_27.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_28.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_29.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_3.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_30.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_31.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_32.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_33.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_34.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_35.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_36.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_37.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_38.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_39.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_4.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_40.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_41.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_42.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_43.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_44.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_45.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_46.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_47.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_48.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_49.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_5.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_50.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_51.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_52.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_53.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_54.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_55.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_56.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_57.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_58.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_59.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_6.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_60.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_61.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_62.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_63.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_64.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_65.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_66.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_67.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_68.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_69.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_7.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_70.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_71.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_72.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_73.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_74.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_75.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_76.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_77.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_78.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_79.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_8.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_80.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_81.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_82.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_83.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_84.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_85.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_86.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_87.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_88.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_89.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_9.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_90.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_91.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_92.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_93.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_94.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_95.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_96.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_97.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_98.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/losses/val_losses_99.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/make_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiments/make_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/0.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/101.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/102.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/103.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/104.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/105.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/106.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/107.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/108.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/109.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/11.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/110.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/111.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/112.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/113.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/114.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/115.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/116.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/117.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/118.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/119.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/12.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/121.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/122.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/123.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/124.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/125.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/126.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/127.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/128.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/129.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/13.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/130.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/131.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/132.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/133.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/134.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/135.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/136.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/137.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/138.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/139.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/14.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/140.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/141.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/142.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/143.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/144.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/145.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/146.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/147.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/148.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/149.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/15.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/150.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/151.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/152.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/153.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/154.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/155.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/156.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/157.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/158.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/159.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/16.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/160.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/161.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/162.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/163.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/164.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/165.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/166.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/167.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/168.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/169.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/17.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/170.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/171.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/172.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/173.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/174.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/175.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/176.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/177.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/178.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/179.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/18.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/180.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/181.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/182.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/183.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/184.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/185.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/186.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/187.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/188.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/189.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/19.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/190.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/191.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/192.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/193.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/194.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/195.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/196.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/197.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/198.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/199.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/20.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/201.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/202.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/203.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/204.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/205.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/206.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/207.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/208.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/209.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/21.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/210.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/211.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/212.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/213.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/214.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/215.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/216.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/217.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/218.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/219.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/22.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/220.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/221.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/222.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/223.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/224.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/225.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/226.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/227.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/23.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/24.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/25.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/27.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/28.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/29.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/30.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/32.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/33.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/34.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/35.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/36.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/37.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/38.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/39.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/40.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/41.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/42.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/43.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/44.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/45.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/46.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/47.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/48.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/49.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/51.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/52.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/53.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/54.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/55.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/56.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/57.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/58.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/59.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/60.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/61.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/62.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/63.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/64.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/65.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/66.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/67.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/68.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/69.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/70.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/71.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/72.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/73.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/74.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/75.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/76.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/77.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/78.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/79.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/80.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/81.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/82.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/83.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/84.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/85.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/86.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/87.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/88.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/89.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/91.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/92.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/93.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/94.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/95.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/96.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/97.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/98.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments/records/99.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/staircase/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +960,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jupyter Notebook" />
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -116,6 +1035,7 @@
       <recent name="$PROJECT_DIR$/experiments" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/experiments" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/tests" />
     </key>
@@ -155,7 +1075,7 @@
       <updated>1700529159245</updated>
       <workItem from="1700529160311" duration="19933000" />
       <workItem from="1700654520345" duration="49937000" />
-      <workItem from="1701836372844" duration="5510000" />
+      <workItem from="1701836372844" duration="10011000" />
     </task>
     <task id="LOCAL-00001" summary="Code from &quot;The staircase property: How hierarchical structure can guide deep learning&quot; NeurIPS 2021">
       <option name="closed" value="true" />
@@ -229,7 +1149,55 @@
       <option name="project" value="LOCAL" />
       <updated>1700944685963</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1701917063677</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917063677</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1701917082905</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917082905</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1701917086903</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917086903</updated>
+    </task>
+    <task id="LOCAL-00013" summary="change tests">
+      <option name="closed" value="true" />
+      <created>1701917096380</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917096380</updated>
+    </task>
+    <task id="LOCAL-00014" summary="make directory structure">
+      <option name="closed" value="true" />
+      <created>1701917108252</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917108252</updated>
+    </task>
+    <task id="LOCAL-00015" summary="get experiment results">
+      <option name="closed" value="true" />
+      <created>1701917149778</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917149778</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +1224,11 @@
     <MESSAGE value="Create new directory tests/ for tests" />
     <MESSAGE value="Edit run_train_eval_loop() to take in a general fourier function (a dict of monomials -&gt; coefficients)" />
     <MESSAGE value="figuring out fourier_tuple_val" />
-    <option name="LAST_COMMIT_MESSAGE" value="figuring out fourier_tuple_val" />
+    <MESSAGE value="refactor" />
+    <MESSAGE value="change tests" />
+    <MESSAGE value="make directory structure" />
+    <MESSAGE value="get experiment results" />
+    <option name="LAST_COMMIT_MESSAGE" value="get experiment results" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -266,21 +1238,16 @@
           <line>34</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/staircase/train.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests.coverage" NAME="staircase_resnet_tests Coverage Results" MODIFIED="1701298497787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/staircase_code$experiment.coverage" NAME="experiment Coverage Results" MODIFIED="1701837021542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
+    <SUITE FILE_PATH="coverage/staircase_code$experiment.coverage" NAME="experiment Coverage Results" MODIFIED="1701980682013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
     <SUITE FILE_PATH="coverage/staircase_code$read_experiment_data.coverage" NAME="read_experiment_data Coverage Results" MODIFIED="1700655141989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests_multi.coverage" NAME="staircase_resnet_tests_multi Coverage Results" MODIFIED="1700703269209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/staircase_code$nonstandard_staircase_resnet_tests.coverage" NAME="nonstandard_staircase_resnet_tests Coverage Results" MODIFIED="1700695494443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/staircase_code$make_csv.coverage" NAME="make_csv Coverage Results" MODIFIED="1701836892926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
+    <SUITE FILE_PATH="coverage/staircase_code$make_csv.coverage" NAME="make_csv Coverage Results" MODIFIED="1701980750181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
     <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests_biased.coverage" NAME="staircase_resnet_tests_biased Coverage Results" MODIFIED="1700702614134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/staircase_code$staircase_custom_resnet_tests.coverage" NAME="staircase_custom_resnet_tests Coverage Results" MODIFIED="1700778168632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests_gauss.coverage" NAME="staircase_resnet_tests_gauss Coverage Results" MODIFIED="1700702939406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />

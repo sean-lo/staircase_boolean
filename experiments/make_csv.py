@@ -35,6 +35,8 @@ for (
     ["1000d"],
     [100],
 ):
+    if function_type == "random" and degree in [12, 16]:
+        continue
     data["function_type"].append(function_type)
     data["degree"].append(degree)
     data["depth"].append(depth)

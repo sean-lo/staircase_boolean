@@ -115,7 +115,7 @@ def train_net_and_save_params(
                 pop_labels = pop_labels.to(device)
                 pop_labels = pop_labels[:, 0]
                 pop_loss = criterion(net(pop_inputs), pop_labels)
-                running_pop_loss += pop_loss
+                running_pop_loss += pop_loss.item()
 
         if iter_num % 100 == 0 and sgd_noise > 0:
             perturb_params = filter(lambda p: p.requires_grad, net.parameters())
@@ -134,7 +134,7 @@ def train_net_and_save_params(
                 )
                 running_losses.append(running_loss)
                 running_loss = 0.0
-                running_pop_losses.append(running_loss)
+                running_pop_losses.append(running_pop_loss)
                 running_pop_loss = 0.0
             else:
                 print(f"{iter_num:>6d}: Running train loss {running_loss / erm_num_samples:.6f}")
