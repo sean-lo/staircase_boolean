@@ -1,0 +1,93 @@
+Index: nonstandard_staircase_resnet_tests.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/nonstandard_staircase_resnet_tests.py b/nonstandard_staircase_resnet_tests.py
+new file mode 100644
+--- /dev/null	(date 1700695492393)
++++ b/nonstandard_staircase_resnet_tests.py	(date 1700695492393)
+@@ -0,0 +1,83 @@
++from neural_net_architectures import ReLUResNet
++from utils import (
++    get_multi_staircase_fourier_coeff_tuples,
++    convert_fourier_fn_to_eval_fn,
++)
++from datasets import (
++    generate_boolean_unbiased,
++    eval_staircase_fast,
++)
++from train import run_train_eval_loop
++
++
++def lr_sched(
++    learning_rate: float,
++    iter_num: int,
++):
++    lr_decay = 15000  # learning rate decay parameter
++    if iter_num < lr_decay:
++        return learning_rate
++    if iter_num < 2 * lr_decay:
++        return learning_rate / 2
++    if iter_num < 3 * lr_decay:
++        return learning_rate / 4
++    if iter_num < 4 * lr_decay:
++        return learning_rate / 8
++    if iter_num < 5 * lr_decay:
++        return learning_rate / 16
++    if iter_num < 6 * lr_decay:
++        return learning_rate / 32
++    else:
++        return learning_rate / 64
++    # return learning_rate*math.exp(-iter_num/lr_decay)
++
++
++if __name__ == "__main__":
++    n = 4
++    num_layers = 5
++    layer_width = 10
++    num_iter = 100000
++    refresh_save_rate = 1000
++    learning_rate = 0.01
++    learning_schedule = lr_sched
++    train_batch_size = 20
++    eval_batch_size = 30000
++    erm = True
++    erm_num_samples = 60000
++    net_type = ReLUResNet
++    iter_range = range(0, num_iter, 1000)
++
++    fourier_fn = {
++        (0,): 1,
++        (0, 1): 1,
++        (0, 1, 2): 1,
++        (0, 1, 3): 1,
++    }
++    eval_fn = convert_fourier_fn_to_eval_fn(fourier_fn)
++    track_fourier_coeffs_tuples = [
++        (1, 1, 1, 1),
++        (-1, 1, 1, 1),
++        (-1, -1, 1, 1),
++        (-1, -1, -1, 1),
++        (-1, -1, 1, -1),
++    ]
++    run_train_eval_loop(
++        n=n,
++        gen_fn=generate_boolean_unbiased,
++        gen_fn_str="unbiased",
++        eval_fn=eval_fn,
++        eval_fn_str="custom",
++        erm=erm,
++        erm_num_samples=erm_num_samples,
++        num_layers=num_layers,
++        layer_width=layer_width,
++        net_type=net_type,
++        train_batch_size=train_batch_size,
++        num_iter=num_iter,
++        learning_rate=learning_rate,
++        learning_schedule=learning_schedule,
++        refresh_save_rate=refresh_save_rate,
++        track_fourier_coeffs_tuples=track_fourier_coeffs_tuples,
++        eval_batch_size=eval_batch_size,
++        iter_range=iter_range,
++    )

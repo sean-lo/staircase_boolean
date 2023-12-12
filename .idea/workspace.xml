@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="42ff44ca-a946-4dce-a1e6-b9ee9933941f" name="Changes" comment="new postprocessing">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/output.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/read_experiment_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/read_experiment_data_biased.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/read_experiment_data_gauss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/read_experiment_data_multi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/readme.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staircase/test_fourier_fn.ipynb" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sean-lo&quot;
+  }
+}</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Remove superfluous functions and imports, add documentation" />
+        <option name="rewordedMessage" value="Remove superfluous functions and imports, add documentation" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="fc864d41ba558e53cfbf56515caf796082b5b54d" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c026f89c-38ee-4378-a7b1-c537e3d6bfe7" />
+        <option name="url" value="https://github.com/sean-lo/staircase_boolean.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2YSq7O2WEcVuJPI4qZB6iu8aNFw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "general",
+    "last_opened_file_path": "/Users/seanlo/Documents/mit_phd/fall_23/9.520_SL/project/staircase_code",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "two.files.diff.last.used.file": "/Users/seanlo/Documents/mit_phd/fall_23/9.520_SL/project/staircase_code/tests/staircase_resnet_tests_biased.py",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/experiments" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/experiments" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="experiment" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="staircase_code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experiments" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="experiment.py" />
+      <option name="PARAMETERS" value="0 1000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42ff44ca-a946-4dce-a1e6-b9ee9933941f" name="Changes" comment="" />
+      <created>1700529159245</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700529159245</updated>
+      <workItem from="1700529160311" duration="19933000" />
+      <workItem from="1700654520345" duration="49937000" />
+      <workItem from="1701836372844" duration="19526000" />
+      <workItem from="1702348307129" duration="636000" />
+    </task>
+    <task id="LOCAL-00001" summary="Code from &quot;The staircase property: How hierarchical structure can guide deep learning&quot; NeurIPS 2021">
+      <option name="closed" value="true" />
+      <created>1700584155092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700584155092</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1700691441809</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700691441809</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add README.md, remove unused datasets in datasets.py">
+      <option name="closed" value="true" />
+      <created>1700692107611</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700692107611</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove superfluous functions and imports, add documentation">
+      <option name="closed" value="true" />
+      <created>1700695841514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700695841514</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Remove superfluous functions and imports, add documentation">
+      <option name="closed" value="true" />
+      <created>1700695920036</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700695920036</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Remove superfluous functions and imports">
+      <option name="closed" value="true" />
+      <created>1700696285573</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700696285573</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Create new directory tests/ for tests">
+      <option name="closed" value="true" />
+      <created>1700696614537</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700696614537</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Edit run_train_eval_loop() to take in a general fourier function (a dict of monomials -&gt; coefficients)">
+      <option name="closed" value="true" />
+      <created>1700774904532</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700774904533</updated>
+    </task>
+    <task id="LOCAL-00009" summary="figuring out fourier_tuple_val">
+      <option name="closed" value="true" />
+      <created>1700944685963</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700944685963</updated>
+    </task>
+    <task id="LOCAL-00010" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1701917063677</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917063677</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1701917082905</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917082905</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1701917086903</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917086903</updated>
+    </task>
+    <task id="LOCAL-00013" summary="change tests">
+      <option name="closed" value="true" />
+      <created>1701917096380</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917096380</updated>
+    </task>
+    <task id="LOCAL-00014" summary="make directory structure">
+      <option name="closed" value="true" />
+      <created>1701917108252</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917108252</updated>
+    </task>
+    <task id="LOCAL-00015" summary="get experiment results">
+      <option name="closed" value="true" />
+      <created>1701917149778</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701917149778</updated>
+    </task>
+    <task id="LOCAL-00016" summary="rerun experiment, add notebook">
+      <option name="closed" value="true" />
+      <created>1702060872047</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702060872047</updated>
+    </task>
+    <task id="LOCAL-00017" summary="deprecated">
+      <option name="closed" value="true" />
+      <created>1702348358282</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1702348358282</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new postprocessing">
+      <option name="closed" value="true" />
+      <created>1702348371416</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1702348371416</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Code from &quot;The staircase property: How hierarchical structure can guide deep learning&quot; NeurIPS 2021" />
+    <MESSAGE value="Code from &quot;The staircase property&quot; NeurIPS 2021" />
+    <MESSAGE value="Refactor" />
+    <MESSAGE value="Add README.md, remove unused datasets in datasets.py" />
+    <MESSAGE value="Remove superfluous functions and imports, add documentation" />
+    <MESSAGE value="Remove superfluous functions and imports" />
+    <MESSAGE value="Create new directory tests/ for tests" />
+    <MESSAGE value="Edit run_train_eval_loop() to take in a general fourier function (a dict of monomials -&gt; coefficients)" />
+    <MESSAGE value="figuring out fourier_tuple_val" />
+    <MESSAGE value="refactor" />
+    <MESSAGE value="change tests" />
+    <MESSAGE value="make directory structure" />
+    <MESSAGE value="get experiment results" />
+    <MESSAGE value="rerun experiment, add notebook" />
+    <MESSAGE value="deprecated" />
+    <MESSAGE value="new postprocessing" />
+    <option name="LAST_COMMIT_MESSAGE" value="new postprocessing" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/staircase/train.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests.coverage" NAME="staircase_resnet_tests Coverage Results" MODIFIED="1701298497787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/staircase_code$experiment.coverage" NAME="experiment Coverage Results" MODIFIED="1701980682013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
+    <SUITE FILE_PATH="coverage/staircase_code$read_experiment_data.coverage" NAME="read_experiment_data Coverage Results" MODIFIED="1700655141989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests_multi.coverage" NAME="staircase_resnet_tests_multi Coverage Results" MODIFIED="1700703269209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/staircase_code$nonstandard_staircase_resnet_tests.coverage" NAME="nonstandard_staircase_resnet_tests Coverage Results" MODIFIED="1700695494443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/staircase_code$make_csv.coverage" NAME="make_csv Coverage Results" MODIFIED="1701980750181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
+    <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests_biased.coverage" NAME="staircase_resnet_tests_biased Coverage Results" MODIFIED="1700702614134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/staircase_code$staircase_custom_resnet_tests.coverage" NAME="staircase_custom_resnet_tests Coverage Results" MODIFIED="1700778168632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/staircase_code$staircase_resnet_tests_gauss.coverage" NAME="staircase_resnet_tests_gauss Coverage Results" MODIFIED="1700702939406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+  </component>
+</project>
